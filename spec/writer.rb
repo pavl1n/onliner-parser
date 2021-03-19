@@ -1,11 +1,8 @@
-# frozen_string_literal: true
-
-require 'csv'
-
+# Writing into csv file
 class Writer
-  def self.write(topics, file)
-    CSV.open(file, 'w') do |writer|
-      topics.each { |topic| writer << ["#{topic.title} - #{topic.size}", topic.image] }
+  def self.writer(title, text, img)
+    CSV.open('output.csv', 'a+') do |writer|
+      writer << [title, text, img]
     end
   end
 end
