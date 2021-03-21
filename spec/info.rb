@@ -10,8 +10,8 @@ class Info
   def get
     begin
       title = @html.xpath(TITLE).first.content.strip.capitalize
-      text = @html.xpath(TEXT).first.to_s.gsub(/[^\s.,!?0-9А-Яа-я]/, '')
-      img = @html.xpath(IMG).to_s.gsub(/\w+-\w+:\s\w+/, '')
+      text = @html.xpath(TEXT).first.to_s.gsub(TEXT_REGULAR, '')
+      img = @html.xpath(IMG).to_s.gsub(IMG_REGULAR, '')
       Writer.writer(title, text, img)
     rescue StandardError
       puts 'not a news'
