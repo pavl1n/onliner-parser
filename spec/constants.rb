@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 IMG = '//div[@class="news-header__preview"]/div[@class="news-header__image"]/@style'
 ONLINER = 'https://www.onliner.by/'
 XPATH_MAIN_TABLE = '//div[@class="g-middle-i"]/div/div/div/div/a[@class="b-tile-main"]/@href'
