@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Writing into csv file
 class GenerateCsv
   def self.generate(title, text, img)

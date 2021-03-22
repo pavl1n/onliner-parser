@@ -6,7 +6,6 @@ require_relative 'constants'
 require 'nokogiri'
 require 'csv'
 
-
 # Parsing title, text and img links from onliner.by
 class Parser
   def initialize
@@ -24,7 +23,6 @@ class Parser
   def html
     @links.each { |link| OpenEachNews.links_call(@doc.xpath(link)) }
   end
-
 end
 
 Parser.new.html
