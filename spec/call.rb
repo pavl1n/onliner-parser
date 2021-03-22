@@ -1,7 +1,7 @@
 require_relative 'info'
 # Reek said to move it to another class o_O
-class Call
+class OpenEachNews
   def self.links_call(links)
-    links.each { |link| Info.new(link).get }
+    links.each { |link| GetDataFromLink.new(link).aggregate }
   end
 end

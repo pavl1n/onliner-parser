@@ -11,16 +11,20 @@ require 'csv'
 class Parser
   def initialize
     @config = Config.new
-    @res = []
     @doc = Nokogiri::HTML(@config.config(ONLINER))
-    @links = [XPATH_LINK_ONE, XPATH_LINK_TWO, XPATH_LINK_THREE]
+    @links = [XPATH_MAIN_TABLE,
+              XPATH_MAIN_TABLE_SECOND,
+              XPATH_LINK_TEASER,
+              XPATH_LINK_CATALOG,
+              XPATH_LINK_PEOPLE,
+              XPATH_LINK_AUTO,
+              XPATH_LINK_TECH]
   end
 
   def html
-    @links.each { |link| Call.links_call(@doc.xpath(link)) }
+    @links.each { |link| OpenEachNews.links_call(@doc.xpath(link)) }
   end
 
 end
 
-parse = Parser.new
-parse.html
+Parser.new.html

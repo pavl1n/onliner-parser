@@ -5,9 +5,11 @@ require 'nokogiri'
 require 'capybara'
 
 # Configurations for chrome
+# This method smells of :reek:TooManyStatements
 class Config
-  def config(link)
-    Capybara.register_driver :selenium do |app|
+  # This method smells of :reek:Utility-Function
+  def config(link) # rubocop:disable Metrics/MethodLength
+      Capybara.register_driver :selenium do |app|
       Capybara::Selenium::Driver.new(app, browser: :chrome)
     end
     Capybara.javascript_driver = :chrome
