@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'writer'
 require_relative 'spec_helper'
 
@@ -8,13 +10,11 @@ class Info
   end
 
   def get
-    begin
-      title = @html.xpath(TITLE).first.content.strip.capitalize
-      text = @html.xpath(TEXT).first.to_s.gsub(TEXT_REGULAR, '')
-      img = @html.xpath(IMG).to_s.gsub(IMG_REGULAR, '')
-      Writer.writer(title, text, img)
-    rescue StandardError
-      puts 'not a news'
-    end
+    title = @html.xpath(TITLE).first.content.strip.capitalize
+    text = @html.xpath(TEXT).first.to_s.gsub(TEXT_REGULAR, '')
+    img = @html.xpath(IMG).to_s.gsub(IMG_REGULAR, '')
+    Writer.writer(title, text, img)
+  rescue StandardError
+    puts 'not a news'
   end
 end
