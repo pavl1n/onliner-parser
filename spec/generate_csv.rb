@@ -1,3 +1,6 @@
+# rubocop:disable Style/FrozenStringLiteralComment
+# rubocop:enable Style/FrozenStringLiteralComment
+
 # Writing into csv file
 class GenerateCsv
   def self.generate(title, text, img)

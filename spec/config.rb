@@ -1,3 +1,6 @@
+# rubocop:disable Style/FrozenStringLiteralComment
+# rubocop:enable Style/FrozenStringLiteralComment
+
 require 'selenium-webdriver'
 require 'nokogiri'
 require 'capybara'

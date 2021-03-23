@@ -1,3 +1,6 @@
+# rubocop:disable Style/FrozenStringLiteralComment
+# rubocop:enable Style/FrozenStringLiteralComment
+
 require_relative 'get_data_from_link'
 # Getting an array of news links and call each of them
 class NewsReader

@@ -14,3 +14,4 @@ TITLE = '//div[@class="news-header__title"]/h1'
 TEXT = '//div[@class="news-text"]/p'
 TEXT_REGULAR = /[^\s.,!?0-9А-Яа-я]/
 IMG_REGULAR = /\w+-\w+:\s\w+/
+# rubocop:enable Layout/LineLength
